@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Update</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<script src="{% static 'js/bootstrap.min.js'%}"></script>
+	<script type = "text/javascript" src="{% static 'jquery/jquery.min.js' %}"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">Crud Operations</a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav">
+  	<li class="nav-item">
+	      <a class="nav-link" href="{% url 'home' %}">Home</a>
+	    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'addstudent' %}">Register</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'details' %}">Details</a>
+    </li>
+  </ul>
+</nav>
+<div class="container card col-md-6 shadow-lg border-success mt-5">
+	<h2 class="text-center">Update</h2>
+	<form method="POST">
+		{% csrf_token %}
+		<input type="text" name="fname" placeholder="Enter your fname " class="form-control" value="{{data.fname}}">
+		<input type="text" name="lname" placeholder="Enter your lname " class="form-control mt-2" value="{{data.lname}}">
+		<input type="text" name="name" placeholder="Enter your name " class="form-control mt-2" value="{{data.name}}">
+		<input type="text" name="rollno" placeholder="Enter your Roll number " class="form-control mt-2" value="{{data.rnum}}">
+		<input type="email" name="email" placeholder="Enter your Email " class="form-control mt-2" value="{{data.email}}">
+		<input type="number" name="mobile" placeholder="Enter your Mobilenumber" class="form-control mt-2" value="{{data.mobile}}">
+		<div class="form-group mt-2">
+			<lable class ="radio-inline">
+				<input type="radio" name="gender" value="Female" {% if data.gender == 'Female' %} checked {% endif %}> Female
+			</lable>
+			<lable class ="radio-inline">
+				<input type="radio" name="gender" value="Male" {% if data.gender == 'Male' %} checked {% endif %}> Male
+			</lable>
+			<lable class ="radio-inline">
+				<input type="radio" name="gender" value="Others" {% if data.gender == 'Others' %} checked {% endif %}> Others
+			</lable>
+		</div>
+		<input type="number" name="age" placeholder="Enter Age" class="form-control mt-2" value="{{data.age}}">
+		<div class="text-center">
+			<input type="submit" name="submit" value="Update" class="btn btn-outline-success btn-md mt-2">
+			<a class="btn btn-outline-info btn-md mt-2" href="{% url 'details' %}">cancel</a>
+		</div>
+	</form>
+	
+</div>
+</body>
+</html>

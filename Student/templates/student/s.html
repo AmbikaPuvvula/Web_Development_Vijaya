@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>External css</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+	<h1>External Css</h1>
+	<p>Accessing styles using External css file</p>
+	<h1 class="st">second example in external css</h1>
+
+	<h1 id="st1">Third example in external css</h1>
+
+	<table class="tab">
+		<tr>
+			<th>Sname</th>
+			<th>Srollno</th>
+			<th>Semail</th>
+		</tr>
+		<tr>
+			<td>Archana</td>
+			<td>540</td>
+			<td>archana@gmail.com</td>
+		</tr>
+	</table>
+
+</body>
+</html>
