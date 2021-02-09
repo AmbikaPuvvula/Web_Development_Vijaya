@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Student',
     'CrudApp',
     'FormsApp',
+    'dtlapp',
 ]
 
 MIDDLEWARE = [

@@ -36,3 +36,10 @@
  save()
  delete
  classname.objects.delete()
+
+
+
+
+ templates
+ 	folder
+ 		htmlpages

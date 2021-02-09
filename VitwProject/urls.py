@@ -33,5 +33,6 @@ urlpatterns = [
     path('registerpage/',views.register,name=''),
     path('',include('CrudApp.urls')),
     path('forms/',include('FormsApp.urls')),
+    path('dtlapp/',include('dtlapp.urls')),
 
 ]
